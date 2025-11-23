@@ -61,6 +61,3 @@ Database/Storage Design
 
 Handled by the Data Tier (Audit Log/Historical Records).
 
-Export to Sheets
-
-Would you like me to elaborate on the Sequence Diagram for a user's prediction request within this architecture?
