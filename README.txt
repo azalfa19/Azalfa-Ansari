@@ -1,64 +1,69 @@
-⚕️ Multi-Class Disease Prediction System
-🎯 Project Overview 
+# Secure Password Generator Utility
 
-This project implements a machine learning system to provide a preliminary, multi-class diagnosis of diseases based on patient clinical features. It is built as a web-based tool to demonstrate the end-to-end application of classification algorithms and model deployment principles, aligning with the core concepts of the AI & ML curriculum.
-✨ Features 
+## 💡 Overview of the Project
 
-The system provides the following major functionalities (Three Major Functional Modules):
+[cite_start]This project is a command-line interface (CLI) application designed to generate highly secure, random passwords. [cite_start]Its primary objective is to allow users to quickly create strong credentials of a customizable length, ensuring a balanced inclusion of uppercase letters, lowercase letters, numbers, and symbols to maximize security and meet modern password complexity standards[cite: 8, 9, 12].
 
-Data Input & Validation: A user-friendly interface to input 5-10 specific clinical and physiological features (e.g., age, specific lab results).
+## ✨ Features (Functional Requirements)
 
-Real-time Prediction Engine: Utilizes a trained classification model (e.g., Random Forest or Neural Network) to predict the probability distribution across three or more specific disease classes.
+[cite_start]This project includes the following high-level features:
 
-Diagnostic Reporting: Generates a clear output showing the top predicted disease and confidence score, including a brief interpretation.
+* [cite_start]**Customizable Password Generation:** Allows the user to specify the exact desired length of the password (Data input & processing)[cite: 26].
+* [cite_start]**Character Pool Logic:** Manages the selection and pooling of characters (letters, digits, symbols) to ensure diversity (Three major functional modules)[cite: 21].
+* [cite_start]**Guaranteed Complexity:** The system ensures that the generated password contains at least one of each required character type (Error handling strategy/Validation)[cite: 41, 54].
+* [cite_start]**Clear I/O Structure:** Provides a straightforward command-line interface for inputting length and clear output for displaying the generated password[cite: 22].
 
-Category,Technology/Tool,Purpose
-Backend & ML,Python 3.9+,Primary programming language.
-Model,Scikit-learn (or TensorFlow/Keras),"For model training, evaluation, and serialization."
-Data Handling,"Pandas, NumPy","Data cleaning, preprocessing, and array manipulation."
-Web Framework,Flask (or Streamlit),Serving the application and hosting the prediction API.
-Version Control,Git,All project history is managed here. 
-🚀 Steps to Install & Run 
+## 🛠️ Technologies & Tools Used
 
-Follow these steps to set up and run the system locally:
+| Component | Technology / Tool | Rationale |
+| :--- | :--- | :--- |
+| **Programming Language** | Python 3.x | Standard language used for implementation. |
+| **Libraries** | `random`, `string` | Utilized for core generation logic and defining character sets. |
+| **Version Control** | Git | [cite_start]Used for version control management[cite: 55]. |
+| **Repository Host** | GitHub | [cite_start]Host for source code and submission requirement[cite: 84]. |
 
-1. Prerequisites
-Ensure you have Python 3.9 or later and Git installed on your system.
+## 🚀 Steps to Install & Run the Project
 
-2. Clone the Repository
-git clone <your_github_repo_link>
-cd Multi-Class-Disease-Prediction
+### Prerequisites
 
-3. Setup Virtual Environment
-It is highly recommended to use a virtual environment:
-python -m venv venv
-source venv/bin/activate  # On Windows, use: .\venv\Scripts\activate
+You must have **Python 3.x** installed on your system.
 
-4. Install Dependencies
-Install all necessary libraries:
-pip install -r requirements.txt
+### Installation & Setup
 
-5. Run the Application
-Execute the main application file (assuming you use Flask or a similar structure):
-python app.py
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/YourUsername/secure-password-generator.git](https://github.com/YourUsername/secure-password-generator.git)
+    cd secure-password-generator
+    ```
 
-The application will typically start on http://127.0.0.1:5000/. Open this link in your browser to access the prediction interface
+2.  **No external libraries are required.** The project uses only standard Python libraries.
 
-🔬 Instructions for Testing 
+### Execution
 
-1. Model Validation Testing
-To verify the model's performance on the holdout dataset:
-python tests/test_model_performance.py
-Expected Output: Displays the F1-Score, Accuracy, and Confusion Matrix on the test set.
+Run the main script from your terminal:
 
-2. Unit Testing
-To ensure the utility functions (preprocessing, reporting generation) work correctly:
-python -m unittest tests/test_preprocessing.py
-Expected Output: All unit tests should pass successfully (OK).
+```bash
+python password_generator.py
 
-3. Functional Testing (Manual)
-Navigate to the deployed application URL.
+The application will prompt you for input:
 
-Input a known sample data point (from the dataset) and submit.
+Welcome to the Secure Password Generator!
+Enter the desired length of the password (e.g., 16):
 
-Verify: The system should return the correct class prediction and the prediction time should be under the 2-second non-functional requirement.
+🧪 Instructions for Testing
+This project incorporates validation and basic testing.
+
+
+Validation Tests
+Length Input Validation: When prompted for length, enter non-integer values (e.g., abc or 12.5). The system should display an error and re-prompt for valid input.
+
+Minimum Length Check (Non-Functional - Reliability): Attempt to enter an extremely short length (e.g., 1 or 2). The system should ideally enforce a minimum length constraint (e.g., 4) for security and reliably generate a password of at least that length.
+
+Functional Verification
+Execute the script and verify the following:
+
+Character Diversity: Manually check several generated passwords (e.g., 5 runs). Each result must contain at least one uppercase letter, one lowercase letter, one digit, and one symbol.
+
+
+Length Accuracy: The length of the generated string must exactly match the number specified by the user.
+
